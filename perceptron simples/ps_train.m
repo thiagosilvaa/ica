@@ -17,9 +17,7 @@ function [weight_vector, me, mse] = ps_train(dataset, coeff, bias, epochs)
             actual_output = step(weight_vector*input_vector(i,:)');
             error(i) = desired_output(i) - actual_output;
             
-            if error(i) ~= 0
-               weight_vector = weight_vector + coeff*error(i)*input_vector(i,:); 
-            end 
+            weight_vector = weight_vector + coeff*error(i)*input_vector(i,:); 
        end
        
        me(e, :) = mean(error);
