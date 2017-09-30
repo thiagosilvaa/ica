@@ -1,5 +1,5 @@
 function [weight_vector, me, mse] = ps_train(dataset, coeff, bias, epochs)
-    dataset = [bias*ones(size(dataset,1),1),dataset(:,1:end-1),dataset(:,end)]
+    dataset = [bias*ones(size(dataset,1),1),dataset(:,1:end-1),dataset(:,end)];
     input_vector = []; %data vector
     [m, n] = size(dataset)
     num_attributes = n-1;
